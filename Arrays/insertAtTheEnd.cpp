@@ -2,6 +2,9 @@
 using namespace std;
 
 
+//  for unsorted array:
+
+
 void insertAtEnd(int arr[], int& n, int value)
 {
     arr[n] = value;
@@ -10,8 +13,8 @@ void insertAtEnd(int arr[], int& n, int value)
 int main()
 {
     int arr[] = {3,6,2,5,1};
-    int n = 5;
-    insertAtEnd(arr,n,8);
+    int n = sizeof(arr)/sizeof(int);
+    insertAtEnd(arr,n,81);
 
     for(int i = 0; i<n; i++)
     {
