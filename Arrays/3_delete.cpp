@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+// for unsorted array:
+
 int deleteValue(int arr[],int& n, int del)
 {
     int pos = -1;
