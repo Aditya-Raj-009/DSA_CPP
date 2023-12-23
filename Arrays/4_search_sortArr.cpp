@@ -14,7 +14,7 @@ int search(int arr[], int high, int src, int low = 0)
     {
         return mid;
     }
-    else if(arr[mid]>src)
+    if(arr[mid]>src)
     {
         return search(arr,mid-1,src,low);
     }
@@ -26,7 +26,7 @@ int main()
 {
     int arr[] = {1,2,3,4,5,6,7};
     int n = sizeof(arr)/sizeof(int);
-    cout<<search(arr,n,2)<<endl;
+    cout<<search(arr,n,7)<<endl;
 
     return 0;
 }
