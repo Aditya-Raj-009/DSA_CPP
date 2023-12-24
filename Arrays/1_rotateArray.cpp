@@ -8,7 +8,7 @@ int  GCD(int a ,int b)
     return b;
     return GCD(b%a,a);
 }
-void rotateArray(int arr[] , int  n, int kTimes)
+void LeftRotateArray(int arr[] , int  n, int kTimes)
 {
     kTimes%=n; // kTimes >=n
 
@@ -41,7 +41,7 @@ void rotateArray(int arr[] , int  n, int kTimes)
 int main()
 {
     int arr [] = {1,2,3,4,5,6};
-    rotateArray(arr,sizeof(arr)/sizeof(int),2);
+    LeftRotateArray(arr,sizeof(arr)/sizeof(int),2);
 
     for(int e:arr)
     {
