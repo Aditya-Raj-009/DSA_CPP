@@ -3,7 +3,7 @@
 
     int kthElement(int arr1[], int arr2[], int n, int m, int k)
     { 
-        int i = 0,j=0,posNumber=0;
+        int i = 0,j=0,kthElement=0;
         while(i<n && j<m)
         {
             if(arr1[i]<=arr2[j])
@@ -12,7 +12,7 @@
                 k--;
                 if(k==0)
             {
-                posNumber= arr1[i];
+                kthElement= arr1[i];
                 break;
             }
             i++;
@@ -22,14 +22,33 @@
                 k--;
                 if(k==0)
             {
-                posNumber= arr2[j];
+                kthElement= arr2[j];
                 break;
             }
             j++;
             }
             
         }
-        return posNumber;
+
+        while(i<n)
+        {
+            k--;
+            if(k==0)
+            {
+                kthElement = arr1[i];
+            }
+            i++;
+        }
+        while(j<m)
+        {
+            k--;
+            if(k==0)
+            {
+                kthElement = arr2[j];
+            }
+            j++;
+        }
+        return kthElement;
     }
 
     int main(int argc, char const *argv[])
