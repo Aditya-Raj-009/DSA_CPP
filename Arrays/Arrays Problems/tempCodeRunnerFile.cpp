@@ -1,1 +1,0 @@
-(key^arr[i])==key+1
