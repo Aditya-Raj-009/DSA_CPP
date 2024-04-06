@@ -6,7 +6,7 @@ void sort012(int*, int);
 
 int main()
 {
-    int a[] = {0,2,1,1,2,0,1,2,1,0};
+    int a[] = {0,2,1,1,2,0,1,2,1,0,1,1,2,0};
 
     sort012(a,sizeof(a)/sizeof(int));
 
