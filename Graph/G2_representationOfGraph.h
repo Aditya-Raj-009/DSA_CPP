@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#pragma once
 
 class GraphRepresentaion{
     private:
@@ -46,20 +47,5 @@ void GraphRepresentaion::listRep(){
         cout <<" "<<adj[i].size()<< endl;
     }
 
-}
-
-int main(int argc, char const *argv[])
-{
-    int v,e;
-    cout<<"Enter number of vertices: "<<endl;
-    cin>>v;
-    cout<<"Enter number of edges: "<<endl;
-    cin>>e;
-
-    GraphRepresentaion* graph = new GraphRepresentaion(v,e);
-    graph->listRep();
-
-    
-    return 0;
 }
 

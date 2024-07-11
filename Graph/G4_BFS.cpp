@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include "G2_representationOfGraph.h"
 using namespace std;
 
 
@@ -12,7 +13,7 @@ vector<int> bfsOfGraph(int v, vector<int> adj[])
     vis[0] = 1;
 
     queue<int> q;
-    q.push(0);
+    q.push(0); // start vertex is 0
 
     vector<int> bfs;
 
@@ -36,6 +37,16 @@ vector<int> bfsOfGraph(int v, vector<int> adj[])
 
 int main(int argc, char const *argv[])
 {
-    /* code */
+     int v,e;
+    cout<<"Enter number of vertices: "<<endl;
+    cin>>v;
+    cout<<"Enter number of edges: "<<endl;
+    cin>>e;
+
+    GraphRepresentaion* graph = new GraphRepresentaion(v,e);
+    graph->listRep();
+
+
+
     return 0;
 }
