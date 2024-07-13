@@ -8,12 +8,12 @@ class GraphRepresentaion{
     public:
     GraphRepresentaion(int,int);
     void matrixRep();
-    vector<int>* listRep();
+    vector<vector<int>> listRep();
 };
 
- GraphRepresentaion::GraphRepresentaion(int vertices,int edges){
-this->vertices = vertices;
-this->edges = edges;
+ GraphRepresentaion::GraphRepresentaion(int vertices,int edges):vertices(vertices),edges(edges){
+// this->vertices = vertices;
+// this->edges = edges;
 }
 
 void GraphRepresentaion::matrixRep(){
@@ -29,24 +29,24 @@ void GraphRepresentaion::matrixRep(){
     
 }
 
-vector<int>* GraphRepresentaion::listRep(){
-    
-    vector<int> adj[vertices+1]; //array of vector.
-    for(int i = 0; i<edges; i++){
-        int u, v;
-        cin>>u>>v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
-    }
-
-    
-    for (int i = 0; i < edges; i++) {
-        cout << i << "->";
-        for (int& x : adj[i]) {
-            cout << x << " ";
+    vector<vector<int>> GraphRepresentaion::listRep() {
+        vector<vector<int>> adj(vertices + 1); // vector of vectors
+        for (int i = 0; i < edges; i++) {
+            int u, v;
+            cin >> u >> v;
+            adj[u].push_back(v);
+            adj[v].push_back(u);
         }
-        cout <<" "<<adj[i].size()<< endl;
-    }
-return adj;
-}
 
+        for (int i = 1; i <= vertices; i++) { 
+            cout << i << " -> ";
+            for (int x : adj[i]) {
+                cout << x << " ";
+            }
+            cout << " (" << adj[i].size() << ")" << endl;
+        }
+        return adj;
+    }
+
+    
+    
