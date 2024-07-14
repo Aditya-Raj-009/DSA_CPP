@@ -17,7 +17,7 @@ class GraphRepresentaion{
 }
 
 void GraphRepresentaion::matrixRep(){
-    int graph[vertices+1][edges+1];
+    int graph[vertices][edges];
 
     for(int i=0; i<edges; i++){
         int u, v;
@@ -30,20 +30,21 @@ void GraphRepresentaion::matrixRep(){
 }
 
     vector<vector<int>> GraphRepresentaion::listRep() {
-        vector<vector<int>> adj(vertices + 1); // vector of vectors
+        vector<vector<int>> adj(vertices); // vector of vectors
         for (int i = 0; i < edges; i++) {
             int u, v;
+            cout<<"Enter 2 vertices one by one to connect: "<<endl;
             cin >> u >> v;
             adj[u].push_back(v);
             adj[v].push_back(u);
         }
 
-        for (int i = 1; i <= vertices; i++) { 
+        for (int i = 0; i < vertices; i++) { 
             cout << i << " -> ";
             for (int x : adj[i]) {
                 cout << x << " ";
             }
-            cout << " (" << adj[i].size() << ")" << endl;
+            cout<<endl;
         }
         return adj;
     }
